@@ -3,16 +3,40 @@ import { Button, Avatar, HealthBar } from '.';
 import { s2blue } from '../variables/colors';
 
 const PlayerBox = (props) => {
-    const { profileStyles, playerNameStyles, statusStyles } = styles;
+    const { profileStyles, playerNameStyles, statusStyles, statusMsgStyles } = styles;
+    const renderAvatar = () => {
+        switch(props.status) {
+            case 'winner':
+                return props.avatarWinner;
+            case 'loser':
+                return props.avatarLoser;
+            default:
+                return props.avatar;
+        }
+    };
+    const renderContent = () => {
+      switch(props.status) {
+          case 'winner':
+              return <h1 style={statusMsgStyles}>Vencedor!</h1>;
+          case 'loser':
+              return <h1 style={statusMsgStyles}>Perdedor!</h1>;
+          default:
+              return (
+                  [
+                      <HealthBar key={0} health={props.health}/>,
+                      <Button key={1} onClick={props.onAttackClick}>Atacar</Button>
+                  ]
+              );
+      }
+    };
     return (
         <div style={styles}>
             <div style={profileStyles}>
-                <Avatar img={props.avatar}/>
+                <Avatar img={renderAvatar()}/>
                 <h1 style={playerNameStyles}>{props.name}</h1>
             </div>
             <div style={statusStyles}>
-                <HealthBar health={100}/>
-                <Button>Atacar</Button>
+                { renderContent() }
             </div>
         </div>
     );
@@ -21,6 +45,7 @@ const PlayerBox = (props) => {
 const styles = {
     backgroundColor: 'white',
     width: 300,
+    minHeight: 375,
     profileStyles: {
         display: 'flex',
         flexDirection: 'column',
@@ -37,6 +62,11 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         padding: 24
+    },
+    statusMsgStyles: {
+        textAlign: 'center',
+        color: s2blue,
+        textTransform: 'uppercase'
     }
 };
 

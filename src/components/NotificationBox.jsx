@@ -13,6 +13,7 @@ const styles = {
     marginBottom: 24,
     width: 200,
     textAlign: 'center',
+    color: s2blue,
     border: `1px solid ${s2blue}`
 };
 
