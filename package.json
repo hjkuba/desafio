@@ -1,0 +1,29 @@
+{
+  "name": "s2itdesafio",
+  "version": "1.0.0",
+  "description": "Você deve implementar um jogo, onde o jogador que ficar com 0% de vida perde.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjkuba/desafio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjkuba/desafio/issues"
+  },
+  "homepage": "https://github.com/hjkuba/desafio#readme",
+  "devDependencies": {
+    "react-scripts": "^1.0.17"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
