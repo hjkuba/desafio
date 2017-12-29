@@ -37,8 +37,7 @@ class App extends Component {
         }
         this.setState((prevState, props) => (
             {
-                notificationMsg: `${prevState.player1Name} ataca ${prevState.player2Name}. 
-                ${prevState.player2Name} possui ${prevState.player2Health - 20}% de vida.`,
+                notificationMsg: `${prevState.player1Name} ataca ${prevState.player2Name}. ${prevState.player2Name} possui ${prevState.player2Health - 20}% de vida.`,
                 player2Health: prevState.player2Health - 20
             }
         ))
@@ -54,8 +53,7 @@ class App extends Component {
         }
         this.setState((prevState, props) => (
             {
-                notificationMsg: `${prevState.player2Name} ataca ${prevState.player1Name}. 
-                ${prevState.player1Name} possui ${prevState.player1Health - 20}% de vida.`,
+                notificationMsg: `${prevState.player2Name} ataca ${prevState.player1Name}. ${prevState.player1Name} possui ${prevState.player1Health - 20}% de vida.`,
                 player1Health: prevState.player1Health - 20
             }
         ))
@@ -81,7 +79,7 @@ class App extends Component {
                     />
                     <div style={centerBoxStyles}>
                         <NotificationBox>{this.state.notificationMsg}</NotificationBox>
-                        <Button onClick={this._onRestart}>Reiniciar</Button>
+                        <Button id='restart-button' onClick={this._onRestart}>Reiniciar</Button>
                     </div>
                     <PlayerBox
                         name={ player2Name }
