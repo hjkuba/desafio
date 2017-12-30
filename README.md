@@ -1,3 +1,24 @@
+# Installing, running and testing the App
+NodeJS and NPM required*
+
+### Installing dependencies
+
+```bash
+npm install
+```
+
+### Running the app
+
+```bash
+npm start
+```
+
+### Running tests
+
+```bash
+npm test
+```
+
 # TESTE FRONTEND S2IT
 
 Você deve implementar um jogo, onde o jogador que ficar com 0% de vida perde.
